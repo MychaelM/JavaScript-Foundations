@@ -17,7 +17,8 @@ const name = "Mychael"
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
 */
-
+let monthlyInterestRate = interestRate / 12;
+let periods = years * 12;
 
 
 
