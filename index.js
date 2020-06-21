@@ -41,7 +41,7 @@ When your math is correct, monthlyRate will equal 1073.64
 let n1 = Math.pow((1 + monthlyInterestRate), periods);
 let numerator = principal * n1 * monthlyInterestRate;
 let denominator = n1 - 1;
-let monthlyRate = numerator / denominator;
+let monthlyRate = (numerator / denominator).toFixed(2);
 
 
 // 🏡 Task 3: Function
