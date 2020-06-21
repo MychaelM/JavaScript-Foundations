@@ -74,20 +74,20 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-function mortgageCalculator(P, I, N) {
-//   let principal = P;
-//   let interestRate = I;
-//   let years = N;
-  let monthlyInterestRate = I / 12;
-  let periods = N * 12;
-  let n1 = Math.pow(1 + monthlyInterestRate, periods);
-  let numerator = P * n1 * monthlyInterestRate;
-  let denominator = n1 - 1;
-  let monthlyRate = (numerator / denominator).toFixed(2);
+// function mortgageCalculator(P, I, N) {
+// //   let principal = P;
+// //   let interestRate = I;
+// //   let years = N;
+//   let monthlyInterestRate = I / 12;
+//   let periods = N * 12;
+//   let n1 = Math.pow(1 + monthlyInterestRate, periods);
+//   let numerator = P * n1 * monthlyInterestRate;
+//   let denominator = n1 - 1;
+//   let monthlyRate = (numerator / denominator).toFixed(2);
 
-  // console.log(name + ", your monthly rate is " + monthlyRate);
-  return name + ", your monthly rate is " + monthlyRate;
-}
+//   // console.log(name + ", your monthly rate is " + monthlyRate);
+//   return name + ", your monthly rate is " + monthlyRate;
+// }
 
 
 
@@ -98,7 +98,26 @@ Then, add control flow within your function such that IF creditScore is above 74
 
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
+function mortgageCalculator(P, I, N, creditScore) {
 
+  let monthlyInterestRate = I / 12;
+  let periods = N * 12;
+  let n1 = Math.pow(1 + monthlyInterestRate, periods);
+  let numerator = P * n1 * monthlyInterestRate;
+  let denominator = n1 - 1;
+  let monthlyRate = (numerator / denominator).toFixed(2);
+
+    if (creditScore >= 660 && creditScore <= 740) {
+        monthlyRate = monthlyRate;
+    } else if (creditScore > 740) {
+        monthlyRate = (monthlyRate * 0.95).toFixed(2);
+    } else {
+        monthlyRate = (monthlyRate * 1.05).toFixed(2);
+    }
+
+  // console.log(name + ", your monthly rate is " + monthlyRate);
+  return `${name}, your monthly rate is ${monthlyRate}`;
+}
 
 
 
