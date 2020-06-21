@@ -50,20 +50,20 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function mortgageCalculator() {
-    let principal = 200000;
-    let interestRate = 0.05;
-    let years = 30;
-    let monthlyInterestRate = interestRate / 12;
-    let periods = years * 12;
-    let n1 = Math.pow(1 + monthlyInterestRate, periods);
-    let numerator = principal * n1 * monthlyInterestRate;
-    let denominator = n1 - 1;
-    let monthlyRate = (numerator / denominator).toFixed(2);
+// function mortgageCalculator() {
+//     let principal = 200000;
+//     let interestRate = 0.05;
+//     let years = 30;
+//     let monthlyInterestRate = interestRate / 12;
+//     let periods = years * 12;
+//     let n1 = Math.pow(1 + monthlyInterestRate, periods);
+//     let numerator = principal * n1 * monthlyInterestRate;
+//     let denominator = n1 - 1;
+//     let monthlyRate = (numerator / denominator).toFixed(2);
 
-    // console.log(name + ", your monthly rate is " + monthlyRate);
-    return name + ", your monthly rate is " + monthlyRate;
-}
+//     // console.log(name + ", your monthly rate is " + monthlyRate);
+//     return name + ", your monthly rate is " + monthlyRate;
+// }
 
 
 
@@ -74,7 +74,20 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
+function mortgageCalculator(P, I, N) {
+  let principal = P;
+  let interestRate = I;
+  let years = N;
+  let monthlyInterestRate = interestRate / 12;
+  let periods = years * 12;
+  let n1 = Math.pow(1 + monthlyInterestRate, periods);
+  let numerator = principal * n1 * monthlyInterestRate;
+  let denominator = n1 - 1;
+  let monthlyRate = (numerator / denominator).toFixed(2);
 
+  // console.log(name + ", your monthly rate is " + monthlyRate);
+  return name + ", your monthly rate is " + monthlyRate;
+}
 
 
 
