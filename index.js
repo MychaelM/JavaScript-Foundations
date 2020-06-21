@@ -75,13 +75,13 @@ mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
 function mortgageCalculator(P, I, N) {
-  let principal = P;
-  let interestRate = I;
-  let years = N;
-  let monthlyInterestRate = interestRate / 12;
-  let periods = years * 12;
+//   let principal = P;
+//   let interestRate = I;
+//   let years = N;
+  let monthlyInterestRate = I / 12;
+  let periods = N * 12;
   let n1 = Math.pow(1 + monthlyInterestRate, periods);
-  let numerator = principal * n1 * monthlyInterestRate;
+  let numerator = P * n1 * monthlyInterestRate;
   let denominator = n1 - 1;
   let monthlyRate = (numerator / denominator).toFixed(2);
 
