@@ -136,24 +136,24 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
-function variableInterestRate(P, I, N) {
-    I = I - 0.02;
-    for (let i = 0; i < 9; i++) {
-        let monthlyInterestRate = I / 12;
-        let periods = N * 12;
-        let n1 = Math.pow(1 + monthlyInterestRate, periods);
-        let numerator = P * n1 * monthlyInterestRate;
-        let denominator = n1 - 1;
-        let monthlyRate = (numerator / denominator).toFixed(2);
+// function variableInterestRate(P, I, N) {
+//     I = I - 0.02;
+//     for (let i = 0; i < 9; i++) {
+//         let monthlyInterestRate = I / 12;
+//         let periods = N * 12;
+//         let n1 = Math.pow(1 + monthlyInterestRate, periods);
+//         let numerator = P * n1 * monthlyInterestRate;
+//         let denominator = n1 - 1;
+//         let monthlyRate = (numerator / denominator).toFixed(2);
 
-        console.log(`${name}, with an interest rate of ${I} your monthly rate is ${Math.round(monthlyRate)}`);
-        I = I + 0.005; 
+//         console.log(`${name}, with an interest rate of ${I.toFixed(3)} your monthly rate is ${Math.round(monthlyRate)}`);
+//         I = I + 0.005; 
         
-    };
+//     };
 
   // console.log(name + ", your monthly rate is " + monthlyRate);
 //   return `${name}, with an interest rate of ${I} your monthly rate is ${Math.round(monthlyRate)}`;
-}
+// }
 
 
 
@@ -171,3 +171,22 @@ function variableInterestRate(P, I, N) {
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+
+
+function variableInterestRate() {
+    let P = window.prompt("What is the principal?");
+    let I = window.prompt("What is your Interest Rate?");
+    let N = window.prompt("How many Years?");
+    I = I - 0.02;
+    for (let i = 0; i < 9; i++) {
+        let monthlyInterestRate = I / 12;
+        let periods = N * 12;
+        let n1 = Math.pow(1 + monthlyInterestRate, periods);
+        let numerator = P * n1 * monthlyInterestRate;
+        let denominator = n1 - 1;
+        let monthlyRate = (numerator / denominator).toFixed(2);
+
+        console.log(`${name}, with an interest rate of ${I.toFixed(3)} your monthly rate is ${Math.round(monthlyRate)}`);
+        I = I + 0.005; 
+        
+    }};
